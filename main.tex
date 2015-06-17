@@ -1,0 +1,52 @@
+\documentclass[12pt]{book}
+
+%= Set Thai Language ==================================
+%= ใช้ XeLaTeX
+
+\usepackage[vcentering,dvips]{geometry}
+\usepackage{subfigure}
+\geometry{papersize={7in,9in},total={4.8in,6.8in}}
+
+\usepackage{pst-tree}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{amsmath}
+\XeTeXlinebreaklocale “th_TH” % สำหรับตัดคำ
+\XeTeXlinebreakskip = 0pt plus 1pt %
+\renewcommand{\baselinestretch}{1.2} % ตั้งระยะห่างระหว่างบรรทัด
+\defaultfontfeatures{Scale=1.23}
+
+%\newfontfamily{\thaifont}[Script=Thai]{TH Sarabun New:script=thai}
+
+\setromanfont[
+BoldFont=THSarabun_Bold.ttf,
+ItalicFont=THSarabun_Italic.ttf,
+BoldItalicFont=THSarabun_Bold_Italic.ttf,
+]{THSarabun.ttf}
+
+
+%\setmainfont[Script=Thai]{THSarabunNew.ttf}
+
+\renewcommand{\figurename}{รูปที่}
+\renewcommand{\chaptername}{บทที่}
+
+\newcounter{examplecounter}
+\newenvironment{example}{%
+  \refstepcounter{examplecounter}%
+  \textbf{ตัวอย่างปัญหา \thechapter-\arabic{examplecounter}}%
+}{%
+}
+
+% =====================================================
+
+\begin{document}
+
+\title{\textbf{ความซับซ้อนของปัญหาและกระบวนการแก้ปัญหาโดยวิธีประมาณ}}
+% Include Author name and Copyright holder name
+\author{ผู้ช่วยศาสตราจารย์ ดร.พงศ์พันธ์ กิจสนาโยธิน}
+
+\input{np_completeness}
+\input{steiner_tree}
+
+\end{document}
